@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/drawable/background_design.xml" value="0.240625" />
         <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/drawable/custom_btn.xml" value="0.240625" />
         <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/drawable/custom_circle.xml" value="0.2361111111111111" />
         <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/drawable/custom_edt_border.xml" value="0.240625" />
@@ -10,10 +11,13 @@
         <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/layout/activity_login.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/layout/activity_register.xml" value="0.221025641025641" />
-        <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/layout/boards_fragment.xml" value="0.10989583333333333" />
-        <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/layout/mycards_fragment.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/layout/boards_fragment.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/layout/input_file.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/layout/item_task.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/layout/mycards_fragment.xml" value="0.21" />
         <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/layout/notification_fragment.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/layout/search_fragment.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/layout/update_data.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/menu/menu_bottom_nav.xml" value="0.1" />
         <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/menu/menu_nav.xml" value="0.1" />
         <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.19074074074074074" />
