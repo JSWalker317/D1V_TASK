@@ -9,6 +9,7 @@
     tools:context=".fragment.MyCardsFragment">
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/tvcard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,14 +20,15 @@
         android:textStyle="bold" />
 
     <SearchView
-        android:id="@+id/sv_search"
+        android:id="@+id/sv_search_card"
         android:layout_width="match_parent"
+        android:padding="5dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvcard"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="10dp"
         android:background="@color/white"
         android:iconifiedByDefault="false"
         android:queryHint="Cards" />
@@ -36,18 +38,20 @@
         android:id="@+id/rv_MyCards"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/sv_search"
-        android:background="@color/white"
         android:layout_above="@+id/btn_add_card"
+        android:layout_below="@+id/sv_search_card"
+        android:background="#EEEEEE"
         android:padding="10dp" />
 
     <Button
         android:id="@+id/btn_add_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:background="@color/white"
         android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/custom_btn"
         android:text="+ Add Card"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/black"

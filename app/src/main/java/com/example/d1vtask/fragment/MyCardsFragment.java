@@ -42,14 +42,14 @@ public class MyCardsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.mycards_fragment, container, false);
         rv_myCards = view.findViewById(R.id.rv_MyCards);
-        sv_search = view.findViewById(R.id.sv_search);
+        sv_search = view.findViewById(R.id.sv_search_card);
         btn_add_card = view.findViewById(R.id.btn_add_card);
 
         rv_myCards.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         FirebaseRecyclerOptions<Task> options =
                 new FirebaseRecyclerOptions.Builder<Task>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Task"), Task.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Task").orderByChild("taskname"), Task.class)
                         .build();
 
         mTaskAdapter = new TaskAdapter(options);
