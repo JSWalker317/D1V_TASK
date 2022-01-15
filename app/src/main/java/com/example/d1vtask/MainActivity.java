@@ -1,11 +1,13 @@
 package com.example.d1vtask;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
-import androidx.appcompat.widget.Toolbar;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -28,6 +30,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.add, menu);
+//        return super.onCreateOptionsMenu(menu);
+//    }
+
+
+
     public void setupBottomNav() {
         mBottomNavigationView = findViewById(R.id.bottom_nav);
         mBottomNavigationView.getMenu().findItem(R.id.bottom_boards).setChecked(true);
@@ -38,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 switch (id) {
                     case R.id.bottom_boards:
                         mViewPager2.setCurrentItem(0);
+
                         getSupportActionBar().setTitle("D1V TASK");
 //                        getSupportActionBar().setIcon(R.drawable.ic_boards);
                         break;
@@ -78,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
-                switch ( position) {
+                switch (position) {
                     case 0:
                         mBottomNavigationView.getMenu().findItem(R.id.bottom_boards).setChecked(true);
                         break;

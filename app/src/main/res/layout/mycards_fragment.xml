@@ -22,7 +22,6 @@
     <SearchView
         android:id="@+id/sv_search_card"
         android:layout_width="match_parent"
-        android:padding="5dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvcard"
         android:layout_marginLeft="10dp"
@@ -31,6 +30,7 @@
         android:layout_marginBottom="10dp"
         android:background="@color/white"
         android:iconifiedByDefault="false"
+        android:padding="5dp"
         android:queryHint="Cards" />
 
 

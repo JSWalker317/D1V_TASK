@@ -8,15 +8,23 @@
     android:orientation="vertical"
     tools:context=".fragment.BoardsFragment">
 
+    <SearchView
+        android:id="@+id/sv_search_board"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/white"
+        android:iconifiedByDefault="false"
+        android:padding="5dp"
+        android:queryHint="Cards" />
 
     <TextView
         android:layout_width="match_parent"
-        android:textColor="@color/black"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="40dp"
         android:layout_marginBottom="10dp"
         android:text="YOUR WORKSPACE"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -33,19 +41,19 @@
             android:background="@color/white"
             android:padding="10dp" />
 
-        <Button
-            android:id="@+id/btn_add_board"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="5dp"
-            android:text="+ Add Board"
-            android:textColor="@color/black"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textSize="16sp"
-            app:backgroundTint="@android:color/darker_gray" />
+<!--        <Button-->
+<!--            android:id="@+id/btn_add_board"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginRight="10dp"-->
+<!--            android:layout_marginBottom="5dp"-->
+<!--            android:text="+ Add Board"-->
+<!--            android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="16sp"-->
+<!--            app:backgroundTint="@android:color/darker_gray" />-->
     </LinearLayout>
 
     <LinearLayout
@@ -56,11 +64,11 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:textColor="@color/black"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_marginLeft="5dp"
             android:text="GUESS WORKSPACE"
+            android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
 
