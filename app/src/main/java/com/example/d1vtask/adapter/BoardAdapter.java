@@ -44,7 +44,7 @@ public class BoardAdapter extends FirebaseRecyclerAdapter<Board, BoardAdapter.my
             @Override
             public void onClick(View v) {
                 mListener.onItemClick(board, i);
-                Toast.makeText(myViewHolder.tv_board.getContext(), "go to board activity", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(myViewHolder.tv_board.getContext(), "go to board activity", Toast.LENGTH_SHORT).show();
             }
         });
 

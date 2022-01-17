@@ -110,7 +110,7 @@ public class SearchFragment extends Fragment {
     @Override
     public void onStop() {
         super.onStop();
-        mTaskAdapter.stopListening();
+//        mTaskAdapter.stopListening();
 
 
     }

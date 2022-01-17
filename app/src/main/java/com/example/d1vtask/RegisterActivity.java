@@ -21,6 +21,8 @@ public class RegisterActivity extends AppCompatActivity {
     private Button btn_register,btn_back;
     private EditText edt_register_user;
     private EditText edt_register_pass;
+    private EditText edt_register_Confirmpass;
+
     private EditText edt_name;
 
     private FirebaseAuth mAuth;
@@ -34,6 +36,7 @@ public class RegisterActivity extends AppCompatActivity {
         btn_back = findViewById(R.id.btn_back);
         edt_register_user = findViewById(R.id.edt_email_register);
         edt_register_pass = findViewById(R.id.edt_pass_register);
+        edt_register_Confirmpass = findViewById(R.id.edt_confirmPass_register);
         edt_name = findViewById(R.id.edt_name_register);
 
         mAuth = FirebaseAuth.getInstance();
@@ -56,6 +59,8 @@ public class RegisterActivity extends AppCompatActivity {
                 String name = edt_name.getText().toString().trim();
                 String username = edt_register_user.getText().toString().trim();
                 String password = edt_register_pass.getText().toString().trim();
+                String confirm_password = edt_register_Confirmpass.getText().toString().trim();
+
 //
                 if (TextUtils.isEmpty(name)) {
                     edt_name.setError("Name is required");
@@ -69,7 +74,14 @@ public class RegisterActivity extends AppCompatActivity {
                     edt_register_pass.setError("Password is required");
                     return;
 
-                } else {
+                }  if (TextUtils.isEmpty(confirm_password)) {
+                    edt_register_Confirmpass.setError("Confirm_Password is required");
+                    return;
+                } if(!password.equals(confirm_password)) {
+                    edt_register_Confirmpass.setError("Confirm_Password is not Correct");
+                    return;
+                }
+                else {
                     loader.setMessage("Register in progress");
                     loader.setCanceledOnTouchOutside(false);
                     loader.show();

@@ -3,15 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/drawable/background_Intro_design.xml" value="0.240625" />
         <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/drawable/background_design.xml" value="0.240625" />
+        <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/drawable/background_intro_design.xml" value="0.12447916666666667" />
         <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/drawable/custom_btn.xml" value="0.240625" />
         <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/drawable/custom_circle.xml" value="0.2361111111111111" />
         <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/drawable/custom_edt_border.xml" value="0.240625" />
         <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/drawable/custom_edt_search.xml" value="0.240625" />
         <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/drawable/ic_add.xml" value="0.1" />
-        <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/layout/account_fragment.xml" value="0.18888888888888888" />
+        <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/drawable/ic_job.xml" value="0.21481481481481482" />
+        <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/layout/account_fragment.xml" value="0.2037037037037037" />
         <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/layout/activity_board.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/layout/activity_card.xml" value="0.1838768115942029" />
+        <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/layout/activity_create_profile.xml" value="0.13072916666666667" />
+        <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/layout/activity_intro.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/layout/activity_login.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/ASUS/D1VTASK/app/src/main/res/layout/activity_register.xml" value="0.221025641025641" />

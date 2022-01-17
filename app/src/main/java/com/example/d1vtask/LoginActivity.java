@@ -4,8 +4,12 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -20,6 +24,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class LoginActivity extends AppCompatActivity {
     private Button btn_login, btn_newAccount;
     private EditText edtMail, edtPass;
+    private CheckBox login_checkbox;
 
     private FirebaseAuth mAuth;
     private ProgressDialog loader;
@@ -33,8 +38,21 @@ public class LoginActivity extends AppCompatActivity {
         btn_newAccount = findViewById(R.id.btnNewAccount);
         edtMail = findViewById(R.id.edt_email_login);
         edtPass = findViewById(R.id.edt_pass_login);
+        login_checkbox = findViewById(R.id.login_checkbox);
 
         mAuth = FirebaseAuth.getInstance();
+
+        login_checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    edtPass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                } else  {
+                    edtPass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                }
+            }
+        });
+
         loader = new ProgressDialog(this);
         addListener();
 
