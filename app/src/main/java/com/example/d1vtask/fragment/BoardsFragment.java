@@ -9,25 +9,22 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.d1vtask.BoardActivity;
-import com.example.d1vtask.MainActivity;
+import com.example.d1vtask.CardActivity;
 import com.example.d1vtask.R;
 import com.example.d1vtask.adapter.BoardAdapter;
-import com.example.d1vtask.adapter.TaskAdapter;
 import com.example.d1vtask.inteface.OnItemClickListener;
 import com.example.d1vtask.model.Board;
-import com.example.d1vtask.model.Task;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -36,8 +33,6 @@ import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.DialogPlusBuilder;
 import com.orhanobut.dialogplus.ViewHolder;
 
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -65,7 +60,7 @@ public class BoardsFragment extends Fragment {
         mBoardAdapter = new BoardAdapter(options, new OnItemClickListener() {
             @Override
             public void onItemClick(Board board, int position) {
-                startActivity(new Intent(getActivity(), BoardActivity.class));
+                startActivity(new Intent(getActivity(), CardActivity.class));
             }
         });
         rv_YourBoard.setAdapter(mBoardAdapter);
@@ -169,6 +164,7 @@ public class BoardsFragment extends Fragment {
         mBoardAdapter = new BoardAdapter(options, new OnItemClickListener() {
             @Override
             public void onItemClick(Board board, int position) {
+                startActivity(new Intent(getActivity(), CardActivity.class));
 
             }
         });
@@ -176,11 +172,12 @@ public class BoardsFragment extends Fragment {
         rv_YourBoard.setAdapter(mBoardAdapter);
     }
 
+
     @Override
     public void onStart() {
         super.onStart();
         mBoardAdapter.startListening();
-
+        rv_YourBoard.setAdapter(mBoardAdapter);
     }
 
     @Override

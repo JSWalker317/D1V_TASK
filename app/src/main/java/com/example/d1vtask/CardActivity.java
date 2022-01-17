@@ -1,27 +1,25 @@
-package com.example.d1vtask.fragment;
+package com.example.d1vtask;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SearchView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.d1vtask.R;
 import com.example.d1vtask.adapter.TaskAdapter;
 import com.example.d1vtask.model.Task;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.DialogPlusBuilder;
@@ -32,30 +30,32 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MyCardsFragment extends Fragment {
+public class CardActivity extends AppCompatActivity {
     private RecyclerView rv_myCards;
     private TaskAdapter mTaskAdapter;
     private SearchView sv_search;
     private Button btn_add_card;
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.mycards_fragment, container, false);
-        rv_myCards = view.findViewById(R.id.rv_MyCards);
-        sv_search = view.findViewById(R.id.sv_search_card);
-        btn_add_card = view.findViewById(R.id.btn_add_card);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_card);
+        rv_myCards = findViewById(R.id.rv_MyCards);
+        sv_search = findViewById(R.id.sv_search_card);
+        btn_add_card = findViewById(R.id.btn_add_card);
 
-        rv_myCards.setLayoutManager(new LinearLayoutManager(getActivity()));
+        Toolbar toolbar = findViewById(R.id.toolbar_board);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Cards");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-//        if(FirebaseAuth.getInstance().getCurrentUser().getUid().toString().equals(FirebaseDatabase.getInstance().getReference().child("Task").orderByChild("ID").get().toString())){
-            FirebaseRecyclerOptions<Task> options =
-                    new FirebaseRecyclerOptions.Builder<Task>()
-                            .setQuery(FirebaseDatabase.getInstance().getReference().child("boards").child("task").orderByChild("taskname"), Task.class)
-                            .build();
-            mTaskAdapter = new TaskAdapter(options);
-//        }
+        rv_myCards.setLayoutManager(new LinearLayoutManager(CardActivity.this));
 
+        FirebaseRecyclerOptions<Task> options =
+                new FirebaseRecyclerOptions.Builder<Task>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("boards").child("task").orderByChild("taskname"), Task.class)
+                        .build();
+
+        mTaskAdapter = new TaskAdapter(options);
         rv_myCards.setAdapter(mTaskAdapter);
 
 
@@ -80,11 +80,23 @@ public class MyCardsFragment extends Fragment {
             }
         });
 
-        return view;
     }
 
+    // this event will enable the back
+    // function to the button on press
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
     private void addCard() {
-        DialogPlusBuilder dialogPlusBuilder = DialogPlus.newDialog(getActivity());
+        DialogPlusBuilder dialogPlusBuilder = DialogPlus.newDialog(this);
         dialogPlusBuilder.setContentHolder(new ViewHolder(R.layout.input_file));
         dialogPlusBuilder.setExpanded(true,1000);
         final DialogPlus dialogPlus = dialogPlusBuilder
@@ -116,21 +128,20 @@ public class MyCardsFragment extends Fragment {
                     map.put("taskname", addTask.getText().toString());
                     map.put("description", addDes.getText().toString());
                     map.put("date", DateFormat.getDateInstance().format(new Date()));
-//                    map.put("ID",FirebaseAuth.getInstance().getCurrentUser().getUid().toString());
 
                     FirebaseDatabase.getInstance().getReference().child("boards").child("task").push()
                             .setValue(map)
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {
-                                    Toast.makeText(getActivity(), "Data add successfully", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(CardActivity.this, "Data add successfully", Toast.LENGTH_SHORT).show();
 
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
-                                    Toast.makeText(getActivity(), "Data add failed", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(CardActivity.this, "Data add failed", Toast.LENGTH_SHORT).show();
 
                                 }
                             });
@@ -157,7 +168,6 @@ public class MyCardsFragment extends Fragment {
     public void onStart() {
         super.onStart();
         mTaskAdapter.startListening();
-        rv_myCards.setAdapter(mTaskAdapter);
 
     }
 

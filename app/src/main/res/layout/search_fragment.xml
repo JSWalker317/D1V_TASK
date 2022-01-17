@@ -1,21 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#EEEEEE"
+    android:orientation="vertical"
     tools:context=".fragment.SearchFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <SearchView
-        android:id="@+id/sv_search"
+        android:id="@+id/sv_search_total"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
-        android:padding="5dp"
         android:layout_marginRight="10dp"
-        android:background="@color/white"
+        android:background="@drawable/custom_edt_search"
+        android:backgroundTint="@color/white"
         android:iconifiedByDefault="false"
+        android:padding="5dp"
         android:queryHint="Search" />
 
-</FrameLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_total_card"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_total_board"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

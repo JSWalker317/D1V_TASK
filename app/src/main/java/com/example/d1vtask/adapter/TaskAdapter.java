@@ -74,7 +74,7 @@ public class TaskAdapter extends FirebaseRecyclerAdapter<Task, TaskAdapter.myVie
                         map.put("description", edt_description.getText().toString());
                         map.put("date", DateFormat.getDateInstance().format(new Date()));
 
-                        FirebaseDatabase.getInstance().getReference().child("Task")
+                        FirebaseDatabase.getInstance().getReference().child("boards").child("task")
                                 .child(getRef(i).getKey()).updateChildren(map)
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
@@ -103,7 +103,7 @@ public class TaskAdapter extends FirebaseRecyclerAdapter<Task, TaskAdapter.myVie
                         builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                FirebaseDatabase.getInstance().getReference().child("Task")
+                                FirebaseDatabase.getInstance().getReference().child("boards").child("task")
                                         .child(getRef(i).getKey()).removeValue();
                                 dialogPlus.dismiss();
                             }
