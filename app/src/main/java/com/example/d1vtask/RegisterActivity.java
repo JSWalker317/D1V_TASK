@@ -23,7 +23,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText edt_register_pass;
     private EditText edt_register_Confirmpass;
 
-    private EditText edt_name;
+//    private EditText edt_name;
 
     private FirebaseAuth mAuth;
     private ProgressDialog loader;
@@ -37,7 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
         edt_register_user = findViewById(R.id.edt_email_register);
         edt_register_pass = findViewById(R.id.edt_pass_register);
         edt_register_Confirmpass = findViewById(R.id.edt_confirmPass_register);
-        edt_name = findViewById(R.id.edt_name_register);
+//        edt_name = findViewById(R.id.edt_name_register);
 
         mAuth = FirebaseAuth.getInstance();
         loader = new ProgressDialog(this);
@@ -56,16 +56,16 @@ public class RegisterActivity extends AppCompatActivity {
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = edt_name.getText().toString().trim();
+//                String name = edt_name.getText().toString().trim();
                 String username = edt_register_user.getText().toString().trim();
                 String password = edt_register_pass.getText().toString().trim();
                 String confirm_password = edt_register_Confirmpass.getText().toString().trim();
 
 //
-                if (TextUtils.isEmpty(name)) {
-                    edt_name.setError("Name is required");
-                    return;
-                }
+//                if (TextUtils.isEmpty(name)) {
+//                    edt_name.setError("Name is required");
+//                    return;
+//                }
                 if (TextUtils.isEmpty(username)) {
                     edt_register_user.setError("Email is required");
                     return;
