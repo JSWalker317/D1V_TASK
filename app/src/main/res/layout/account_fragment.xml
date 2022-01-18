@@ -118,7 +118,7 @@
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:clickable="true"
-            android:drawableLeft="@drawable/ic_help"
+            android:drawableLeft="@drawable/ic_update"
             android:drawablePadding="10dp"
             android:minHeight="48dp"
             android:padding="10dp"
